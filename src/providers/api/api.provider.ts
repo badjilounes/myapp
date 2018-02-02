@@ -1,5 +1,5 @@
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {CONFIG} from '../../config/config';
 
@@ -12,7 +12,7 @@ import {CONFIG} from '../../config/config';
 @Injectable()
 export class ApiProvider {
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: Http) {}
 
   APIGet(table: string, input?: any): Observable<any>{
     let route: string = `${CONFIG.api_url}/${table}`;
